@@ -2,6 +2,8 @@ import time
 import yaml
 import pingparsing
 from tabulate import tabulate
+from prometheus_client import start_http_server, Gauge
+import random
 
 
 CONFIG_FILE = "config.yaml"
@@ -25,12 +27,11 @@ def ping_server(host):
     transmitter.destination = host
     transmitter.count = 4
     result = transmitter.ping()
-    
     # Convert result to dictionary and format as a table
     data = p.parse(result).as_dict()
     table = tabulate(data.items(), headers=["Metric", "Value"], tablefmt="pretty")
-    print(f'\n{table}\n')
-
+    print(f'\n{table}\n')   
+    return data
 
 def main():
     config = load_config(CONFIG_FILE)
@@ -45,6 +46,13 @@ def main():
         print("No servers found in config.")
         return
 
+    # Start Prometheus server
+    start_http_server(8989)
+
+    # Initialize Prometheus metrics 
+    avg_rtt = Gauge('avg_rtt', 'Round Trip Time', ["server"])
+    packet_loss_count = Gauge('packet_loss_count', 'Packet Loss Count', ["server"])
+
     print(f"Monitoring {len(servers)} servers every {interval} seconds.")
     print("Servers to monitor:")
     for server in servers:
@@ -56,11 +64,16 @@ def main():
         print(f"{'='*50}")
         
         for server in servers:
+            host = server['host']
             try:
-                ping_server(server['host'])
+                data = ping_server(host)
             except Exception as e:
-                print(f"Error pinging {server['name']} ({server['host']}): {e}")
-        
+                print(f"Error pinging {server['name']} ({host}): {e}")
+            
+            # Expose Metric to Prometheus server
+            avg_rtt.labels(server=host).set(data['rtt_avg'])
+            packet_loss_count.labels(server=host).set(data['packet_loss_count'])
+            
         print(f"Waiting {interval} seconds before next cycle...")
         time.sleep(interval)
 
