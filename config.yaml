@@ -1,7 +1,7 @@
 # Synthetic Monitoring Platform Configuration
 monitoring:
   # Time interval between ping checks (in seconds)
-  interval: 10
+  interval: 5
   
   # List of servers to monitor
   servers:
