@@ -1,4 +1,3 @@
-Skip to content
 # Synthetic Monitoring Platform
 
 A Python-based **synthetic monitoring platform** that periodically runs `ping` commands, stores metrics in **Prometheus**, and visualizes them in **Grafana** for real-time network performance insights.
@@ -84,5 +83,6 @@ Apply project management and peer review workflows.
 📄 License
 This project is licensed under the MIT License.
 See LICENSE for details.
+
 
 ---
