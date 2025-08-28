@@ -14,9 +14,7 @@ This project was built as part of the Build Fellowship program and emphasizes **
 - [Architecture](#architecture)
 - [Setup & Installation](#setup--installation)
 - [Usage](#usage)
-- [PromQL Examples](#promql-examples)
 - [Learning Outcomes](#learning-outcomes)
-- [Contributing](#contributing)
 - [License](#license)
 
 ---
@@ -51,23 +49,18 @@ This hands-on project helped me gain industry-relevant experience with:
 
 ---
 
-## 🏗 Architecture
-```plaintext
+## 🏗 Architecture (will be updated soon)
 [Python Script] → [Prometheus TSDB] → [Grafana Dashboards]
 ⚙️ Setup & Installation
 1. Clone Repository
 git clone https://github.com/deebran/synthetic-monitoring-platform.git
 cd synthetic-monitoring-platform
-2. Create Virtual Environment & Install Dependencies
-python3 -m venv venv
-source venv/bin/activate   # On Windows use: venv\Scripts\activate
-pip install -r requirements.txt
 3. Start Prometheus & Grafana (locally)
 Instructions to install: 
     - [Prometheus](https://prometheus.io/docs/prometheus/latest/installation/)
     - [Grafana](https://grafana.com/docs/grafana/latest/setup-grafana/installation/)
 4. Run the Python Synthetic Monitor
-python ping_monitor.py --targets 1.1.1.1 8.8.8.8
+python ping_monitor.py
 ▶️ Usage
 Edit config.yaml to change monitored targets and intervals.
 
