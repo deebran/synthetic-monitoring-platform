@@ -64,14 +64,18 @@ Instructions to install:
    
 ```python ping_monitor.py```
 
-▶️ Usage
+---
+
+## ▶️ Usage
 Edit config.yaml to change monitored targets and intervals.
 
 Access Grafana at http://localhost:3000.
 
 Access Prometheus at http://localhost:9090.
 
-🎯 Learning Outcomes
+---
+
+## 🎯 Learning Outcomes
 By completing this project, I learned to:
 
 Understand synthetic monitoring and its role in SaaS reliability.
@@ -84,12 +88,15 @@ Build Grafana dashboards for observability.
 
 Apply project management and peer review workflows.
 
-📄 License
+---
+
+###📄 License
 This project is licensed under the MIT License.
 See LICENSE for details.
 
 
 ---
+
 
 
 
