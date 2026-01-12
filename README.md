@@ -56,11 +56,11 @@ This hands-on project helped me gain industry-relevant experience with:
 git clone https://github.com/deebran/synthetic-monitoring-platform.git
 cd synthetic-monitoring-platform
 ```
-3. Start Prometheus & Grafana (locally)
+2. Start Prometheus & Grafana (locally)
 Instructions to install: 
     - [Prometheus](https://prometheus.io/docs/prometheus/latest/installation/)
     - [Grafana](https://grafana.com/docs/grafana/latest/setup-grafana/installation/)
-4. Run the Python Synthetic Monitor
+3. Run the Python Synthetic Monitor
 python ping_monitor.py
 ▶️ Usage
 Edit config.yaml to change monitored targets and intervals.
@@ -88,4 +88,5 @@ See LICENSE for details.
 
 
 ---
+
 
