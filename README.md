@@ -61,6 +61,7 @@ Instructions to install:
     - [Prometheus](https://prometheus.io/docs/prometheus/latest/installation/)
     - [Grafana](https://grafana.com/docs/grafana/latest/setup-grafana/installation/)
 3. Run the Python Synthetic Monitor
+   
 ```python ping_monitor.py```
 
 ▶️ Usage
@@ -89,6 +90,7 @@ See LICENSE for details.
 
 
 ---
+
 
 
 
