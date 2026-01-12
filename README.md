@@ -52,8 +52,10 @@ This hands-on project helped me gain industry-relevant experience with:
 [Python Script] → [Prometheus TSDB] → [Grafana Dashboards]
 ⚙️ Setup & Installation
 1. Clone Repository
+```
 git clone https://github.com/deebran/synthetic-monitoring-platform.git
 cd synthetic-monitoring-platform
+```
 3. Start Prometheus & Grafana (locally)
 Instructions to install: 
     - [Prometheus](https://prometheus.io/docs/prometheus/latest/installation/)
@@ -86,3 +88,4 @@ See LICENSE for details.
 
 
 ---
+
